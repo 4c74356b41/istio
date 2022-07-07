@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: routing
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - routing
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: routing
+        subset: v1
+    mirror:
+      host: routing
+      subset: v3
