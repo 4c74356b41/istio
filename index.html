@@ -27,7 +27,7 @@
             -----
             ### What is Istio service mesh?
 
-            modernized service networking layer that provides a transparent and language-independent way to flexibly offload application functions:
+            networking layer that provides a transparent and language-independent way to offload application functions:
 
             - Security Logic: MTLS <!-- .element: class="fragment" -->
             - Communication Logic: Basic routing concepts <!-- .element: class="fragment" -->
@@ -37,12 +37,13 @@
             #### Components
 
             1. Istiod (formely: pilot, galley, citadel, mixer)
-            2. Gateway (ingress only)
+            2. Gateway (ingress only, no egress)
             -----
 
             ### Current snapshot
 
-            Total of 12 different Istio resources.
+            Total of 12 different Istio resources:
+
             - Gateways (less than 10) <!-- .element: class="fragment" -->
             - Virtual services (~100) <!-- .element: class="fragment" -->
 
@@ -207,7 +208,7 @@
             ---
             Public routing
             <div class="r-stack">
-              <img class="fragment" src="images/public-route-0.png">
+              <img src="images/public-route-0.png">
               <img class="fragment" src="images/public-route-1.png">
               <img class="fragment" src="images/public-route-2.png">
               <img class="fragment" src="images/public-route-3.png">
@@ -217,7 +218,7 @@
             ---
             Private routing
             <div class="r-stack">
-              <img class="fragment" src="images/private-route-0.png">
+              <img src="images/private-route-0.png">
               <img class="fragment" src="images/private-route-1.png">
               <img class="fragment" src="images/private-route-2.png">
               <img class="fragment" src="images/private-route-3.png">
