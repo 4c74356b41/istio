@@ -25,7 +25,7 @@
             ### managing microservices
 
             -----
-            #### What is Istio service mesh?
+            ### What is Istio service mesh?
 
             modernized service networking layer that provides a transparent and language-independent way to flexibly and easily automate application network functions.
 
@@ -40,7 +40,7 @@
             2. Gateway (ingress only)
             -----
 
-            #### Current snapshot
+            ### Current snapshot
 
             Total of 12 different Istio resources.
             - Gateways (less than 10) <!-- .element: class="fragment" -->
@@ -66,7 +66,7 @@
             5. WorkloadGroup: represents a logical group of virtual machine workloads that share common properties located  <!-- .element: class="fragment" -->
 
             -----
-            #### Gateways
+            ### Gateways
 
             defines a load balancer operating at the edge of the mesh servicing incoming or outgoing traffic.  
             The specification describes a set of ports that should be exposed, the type of protocol to use, SNI configuration, etc.  
@@ -96,7 +96,7 @@
             ```
 
             -----
-            #### Virtual Services
+            ### Virtual Services
 
             defines a set of traffic routing rules to apply to a kubernetes service or subset of service based on the matching criteria.  
             The specification describes path based routing, rewrites, header based routing, etc.
@@ -141,7 +141,7 @@
             3. One per several services <!-- .element: class="fragment" -->
 
             -----
-            #### Destination Rules
+            ### Destination Rules
 
             DestinationRule defines policies that apply to traffic intended for a service after routing has occurred.  
             These rules specify configuration for load balancing, connection pool size from the sidecar, outlier detection settings, etc.
@@ -175,7 +175,7 @@
             - ClientTLSSettings and LocalityLoadBalancerSetting (ignore these for now) <!-- .element: class="fragment" -->
 
             -----
-            #### Service Entry
+            ### Service Entry
 
             ServiceEntry enables adding additional entries into the service mesh, so that auto-discovered services in the mesh can access/route to these manually specified services.  
             A service entry describes the properties of a service: DNS name, VIPs, ports, protocols, endpoints, etc
@@ -202,7 +202,7 @@
             Main takeaways: its possible to integrate external services into the mesh, e.g. from a 3rd party provider.
 
             -----
-            #### Routing examples
+            ### Routing examples
 
             <img data-src="images/routing.png" />
             ---
@@ -227,9 +227,9 @@
             </div>
 
             -----
-            #### demonstratio
+            ### demonstratio
             -----
-            #### Questions
+            ### Questions
           </textarea>
       </section>
     </div>
