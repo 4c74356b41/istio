@@ -21,33 +21,29 @@
       <section data-markdown data-separator="-----" data-separator-vertical="---">
         <textarea data-template>
 
-            # Istio Service Mesh
-            ## managing microservices
+            ## Istio Service Mesh
+            ### managing microservices
 
             -----
-            ### What is a service mesh?
+            #### What is Istio service mesh?
 
-            A service mesh is a dedicated infrastructure layer built into an application that controls service-to-service communication in a microservices architecture. It controls the delivery of service requests to other services, performs load balancing, encrypts data, and discovers other services.
-            -----
+            modernized service networking layer that provides a transparent and language-independent way to flexibly and easily automate application network functions.
 
-            ### Why is Istio needed
-
-            - Security Logic <!-- .element: class="fragment" -->
-            - Communication Logic <!-- .element: class="fragment" -->
-            - Monitoring Logic <!-- .element: class="fragment" -->
-            -----
-
-            #### Current usage
-
-            - Basic routing concepts (similar to what a regular ingress allows)  <!-- .element: class="fragment" -->
-            - MTLS (enabled by Infra team on Istio level) <!-- .element: class="fragment" -->
-            - Ingress logging <!-- .element: class="fragment" -->
+            - Security Logic: MTLS <!-- .element: class="fragment" -->
+            - Communication Logic: Basic routing concepts <!-- .element: class="fragment" -->
+            - Monitoring Logic: Ingress logging <!-- .element: class="fragment" -->
 
             ---
+            #### Components
+
+            1. Istiod (formely: pilot, galley, citadel, mixer)
+            2. Gateway (ingress only)
+            -----
+
             #### Current snapshot
 
             Total of 12 different Istio resources.
-            - Gateways (~7) <!-- .element: class="fragment" -->
+            - Gateways (less than 10) <!-- .element: class="fragment" -->
             - Virtual services (~100) <!-- .element: class="fragment" -->
 
             ---
