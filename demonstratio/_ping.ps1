@@ -8,7 +8,7 @@ while ($true) {
   try {
     $result = Invoke-RestMethod -Uri http://10.1.0.6:81/hello -UseBasicParsing
     Write-Host `
-      -Object ( "version: {0}, hostname: {1}, delay: {2}" -f $result.version, $result.hostname, $result.delay ) `
+      -Object ( "{0}: ver={1}; delay={2}" -f $result.hostname, $result.version, $result.delay ) `
       -ForegroundColor $colors[$result.version]
   }
   catch {

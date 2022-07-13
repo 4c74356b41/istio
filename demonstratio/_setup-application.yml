@@ -1,9 +1,8 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: routing
-  labels:
-    app: routing
 spec:
   ports:
   - port: 8000
@@ -20,7 +19,6 @@ spec:
     matchLabels:
       app: routing
       version: v1
-  replicas: 1
   template:
     metadata:
       labels:
@@ -33,12 +31,7 @@ spec:
         command:
         - ./recursed
         - -istio
-        resources:
-          requests:
-            cpu: "100m"
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8000
+        - version=v1
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -49,7 +42,6 @@ spec:
     matchLabels:
       app: routing
       version: v2
-  replicas: 1
   template:
     metadata:
       labels:
@@ -62,14 +54,8 @@ spec:
         command:
         - ./recursed
         - -istio
-        - -delay=2000
         - -version=v2
-        resources:
-          requests:
-            cpu: "100m"
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8000
+        - -delay=2000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -80,7 +66,6 @@ spec:
     matchLabels:
       app: routing
       version: v3
-  replicas: 1
   template:
     metadata:
       labels:
@@ -94,9 +79,3 @@ spec:
         - ./recursed
         - -istio
         - -version=v3
-        resources:
-          requests:
-            cpu: "100m"
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8000

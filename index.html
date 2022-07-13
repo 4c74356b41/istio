@@ -64,7 +64,7 @@
             2. RequestAuthentication: require JWT on all\some paths for all\some workloads <!-- .element: class="fragment" -->
             3. EnvoyFilter: low level modification to envoy behaviour <!-- .element: class="fragment" -->
             4. WorkloadEntry: represents a single instance of a virtual machine workload located ouside of mesh <!-- .element: class="fragment" -->
-            5. WorkloadGroup: represents a logical group of virtual machine workloads that share common properties located  <!-- .element: class="fragment" -->
+            5. WorkloadGroup: represents a logical group of virtual machine workloads that share common properties located outside of mesh  <!-- .element: class="fragment" -->
 
             -----
             ### Gateways
@@ -94,6 +94,11 @@
                   credentialName: secret-with-certificate
                   mode: SIMPLE
             ```
+
+            ---
+            Main takeaways:
+
+            Gateways are managed by Infrastructure team :)
 
             -----
             ### Virtual Services
@@ -128,17 +133,12 @@
             ---
             Main takeaways:
 
-            - Route based on headers, query paramenters, headers, scheme, method, port, gateway, host, etc <!-- .element: class="fragment" -->
+            - Route based on headers, query paramenters, scheme, method, port, gateway, host, etc <!-- .element: class="fragment" -->
             - Manipulate headers, paths, hosts <!-- .element: class="fragment" -->
             - Route to services, subsets, virtual services (including weigths, rewrites, etc) <!-- .element: class="fragment" -->
             - Retries (attempts, conditions, timeout) <!-- .element: class="fragment" -->
             - Cors rules (methods, origins, max age, etc) <!-- .element: class="fragment" -->
             - Fault injection (4xx, 5xx, timeout, percentage) <!-- .element: class="fragment" -->
-            ---
-            There are several possible "architectures" for Virtual Services
-            1. One per team <!-- .element: class="fragment" -->
-            2. One per service <!-- .element: class="fragment" -->
-            3. One per several services <!-- .element: class="fragment" -->
 
             -----
             ### Destination Rules

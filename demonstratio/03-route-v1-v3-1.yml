@@ -17,10 +17,10 @@ spec:
         subset: v1
         port:
           number: 8000
-      weight: 80
+      weight: 90
     - destination:
         host: routing
         subset: v3
         port:
           number: 8000
-      weight: 20
+      weight: 10

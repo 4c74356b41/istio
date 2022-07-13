@@ -14,3 +14,13 @@ spec:
     route:
     - destination:
         host: routing
+        subset: v1
+        port:
+          number: 8000
+      weight: 10
+    - destination:
+        host: routing
+        subset: v3
+        port:
+          number: 8000
+      weight: 90
