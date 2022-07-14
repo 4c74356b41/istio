@@ -40,13 +40,12 @@ $steps = (
 
 foreach ($step in $steps) {
     Write-Host -ForegroundColor Green $step.hint
+    Read-Host " " | Out-Null
     $currentYaml = Get-ChildItem -File -Filter $step.filter
     $currentYaml.foreach{
         if ( $step.hint -ne "clean up" ) {
             Get-Content $PSItem.FullName -Raw | Write-Host
-            Read-Host " "
-            Write-Host ""
-            Write-Host ""
+            Read-Host " " | Out-Null
             Write-Host ""
             kubectl apply -f $PSItem.FullName | Out-Null
         }

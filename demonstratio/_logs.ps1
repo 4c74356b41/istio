@@ -9,7 +9,7 @@ stern routing --since=1s --color=never | ForEach-Object {
         "Blue"
     }
     else {
-        "White"
+        "Black"
     }
     Write-Host `
         -Object $PSItem `

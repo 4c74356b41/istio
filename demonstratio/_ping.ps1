@@ -14,5 +14,5 @@ while ($true) {
   catch {
     $PSItem.Exception
   }
-  Start-Sleep -Milliseconds 250
+  Start-Sleep -Milliseconds 350
 }
